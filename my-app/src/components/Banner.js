@@ -1,6 +1,5 @@
 // Banner
 import Painter from '../imgs/painter.webp';
-
 function Banner() {
     return (
         <div>
