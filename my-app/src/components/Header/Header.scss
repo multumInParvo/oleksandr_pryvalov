@@ -1,0 +1,55 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 70px 10%;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    .logo-name-surname {
+      font-size: 26px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-decoration: none;
+
+      .logo-name {
+        color: rgb(182, 170, 170);
+      }
+
+      .logo-surname {
+        color: rgb(189, 99, 99);
+      }
+    }
+  }
+}
+
+.menu {
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  gap: 50px;
+
+  .menu-links {
+    letter-spacing: 5px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
