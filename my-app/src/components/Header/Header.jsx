@@ -10,7 +10,7 @@ function Header() {
         <nav>
             <div className='logo'>
                 <Link to="/" className='logo-name-surname'>
-                    <span className='logo-name'>OLEKSANDR </span>
+                    <span className='logo-name'>OLEKSANDR</span>
                     <span className='logo-surname'>PRYVALOV</span>
                 </Link>
             </div>
@@ -18,7 +18,7 @@ function Header() {
                 <Link to="/portfolio" className='menu-links'>PORTFOLIO</Link>
                 <Link to="/about" className='menu-links'>ABOUT</Link>
                 <Link to="/contact" className='menu-links'>CONTACT</Link>
-                <Link to="/about" className='menu-links'><FontAwesomeIcon icon={faInstagram} /></Link>
+                <Link to="https://www.instagram.com/oleksandrpryv/" className='menu-links'><FontAwesomeIcon icon={faInstagram} /></Link>
             </div>
         </nav>
     );

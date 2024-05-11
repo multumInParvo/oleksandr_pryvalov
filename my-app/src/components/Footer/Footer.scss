@@ -1,9 +1,22 @@
 .footer {
-    padding-top: 80px; 
-    text-align: center;
-  }
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
 
-  h2 {
-    margin: 0;
+  .footer-text {
+    letter-spacing: 4px;
     font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+
+    .logo-name {
+      color: rgb(182, 170, 170);
+      letter-spacing: 1px;
+    }
+
+    .logo-surname {
+      color: rgb(189, 99, 99);
+      letter-spacing: 1px;
+    }
   }
+}

@@ -5,7 +5,10 @@ import '../Footer/Footer.scss';
 function Footer() {
     return (
         <div className="footer">
-            <h2>Copyright © 2024 Oleksandr Pryvalov</h2>
+            <p className='footer-text'>Copyright © 2024
+            <span className='logo-name'> OLEKSANDR</span>
+            <span className='logo-surname'>PRYVALOV</span>
+            </p>
         </div>
     );
 }
