@@ -1,6 +1,6 @@
 // Banner.js
 import React, { useState, useEffect } from 'react';
-import Chamigny from '../../images/chamigny church.webp';
+import Chamigny from '../../images/chamigny_church.webp';
 import Duck from '../../images/duck.webp';
 import Helene from '../../images/helene.webp';
 import Chicken from '../../images/chicken.webp';
