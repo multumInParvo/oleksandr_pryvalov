@@ -1,0 +1,54 @@
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    .contact-info {
+        z-index: 1;
+        gap: 80px;
+        left: 20%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: rgb(0, 0, 0);
+        opacity: 0.1;
+        transition: opacity 1500ms ease;
+
+        .contact-details-color {
+            font-size: 26px;
+            letter-spacing: 1px;
+            color: rgb(189, 99, 99);
+            font-weight: 400;
+        }
+
+        .contact-details {
+            letter-spacing: 5px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .instagram-logo {
+            font-size: 26px;
+            color: rgb(189, 99, 99);
+        }
+    }
+
+    .contact-image-container {
+        display: flex;
+        justify-content: center;
+        padding: 0 10%;
+
+        .contact-image {
+            max-height: 690px;
+            width: 100%;
+            object-fit: cover;
+            transition: opacity 2500ms ease;
+        }
+    }
+}
+
+.contact.loaded .contact-info {
+    opacity: 1;
+}
