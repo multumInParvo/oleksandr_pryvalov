@@ -1,12 +1,12 @@
 // Home
 import React from 'react';
 import '../Home/Home.scss';
-import Banner from '../../components/Banner/Banner';
+import Carousel from '../../components/Carousel/Carousel';
 
 function Home() {
   return (
     <div className='home'>
-      <Banner />
+      <Carousel />
     </div>
   );
 }

@@ -4,19 +4,29 @@
   text-align: center;
 
   .footer-text {
+    display: flex;
+    justify-content: center; /* Center content vertically */
+    align-items: center;
     letter-spacing: 4px;
     font-size: 12px;
     font-weight: 400;
     margin: 0;
 
-    .logo-name {
+    .footer-name {
       color: rgb(182, 170, 170);
+      letter-spacing: 1px;
+      padding-left: 10px;
+    }
+
+    .footer-surname {
+      color: rgb(189, 99, 99);
       letter-spacing: 1px;
     }
 
-    .logo-surname {
-      color: rgb(189, 99, 99);
-      letter-spacing: 1px;
+    .instagram-logo {
+      font-size: 20px;
+      color: rgb(182, 170, 170);
+      padding-left: 10px;
     }
   }
 }

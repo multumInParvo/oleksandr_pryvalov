@@ -1,4 +1,4 @@
-nav {
+nav { 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,16 +11,32 @@ nav {
 
     .logo-name-surname {
       font-size: 26px;
-      font-weight: 300;
+      font-weight: 200;
       letter-spacing: 1px;
       text-decoration: none;
+      display: flex;
 
       .logo-name {
         color: rgb(182, 170, 170);
+        transition: transform 1.2s ease; 
       }
 
       .logo-surname {
+        font-weight: 400;
         color: rgb(189, 99, 99);
+        transition: transform 1.2s ease; 
+      }
+    }
+
+    &:hover {
+      .logo-name {
+        transform: translateX(-15px);
+        transition: transform 0.3s ease; 
+      }
+
+      .logo-surname {
+        transform: translateX(15px);
+        transition: transform 0.3s ease; 
       }
     }
   }
@@ -30,12 +46,18 @@ nav {
   font-size: 12px;
   font-weight: 500;
   display: flex;
+  align-items: center;
   gap: 50px;
 
   .menu-links {
     letter-spacing: 5px;
     color: rgb(0, 0, 0);
     text-decoration: none;
+  }
+
+  .instagram-logo {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
   }
 }
 

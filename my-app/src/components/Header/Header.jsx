@@ -15,10 +15,10 @@ function Header() {
                 </Link>
             </div>
             <div className="menu">
-                <Link to="/portfolio" className='menu-links'>PORTFOLIO</Link>
+                <Link to="/works" className='menu-links'>WORKS</Link>
                 <Link to="/about" className='menu-links'>ABOUT</Link>
                 <Link to="/contact" className='menu-links'>CONTACT</Link>
-                <Link to="https://www.instagram.com/oleksandrpryv/" className='menu-links'><FontAwesomeIcon icon={faInstagram} /></Link>
+                <Link to="https://www.instagram.com/oleksandrpryv/" className='instagram-logo'><FontAwesomeIcon icon={faInstagram} /></Link>
             </div>
         </nav>
     );
