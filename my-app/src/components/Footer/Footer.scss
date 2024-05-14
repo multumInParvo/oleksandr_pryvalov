@@ -1,3 +1,5 @@
+@import '../../styles/Colors.scss';
+
 .footer {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -13,19 +15,19 @@
     margin: 0;
 
     .footer-name {
-      color: rgb(182, 170, 170);
+      color: $name-color;
       letter-spacing: 1px;
       padding-left: 10px;
     }
 
     .footer-surname {
-      color: rgb(189, 99, 99);
+      color: $surname-color;
       letter-spacing: 1px;
     }
 
     .instagram-logo {
       font-size: 20px;
-      color: rgb(182, 170, 170);
+      color: $name-color;
       padding-left: 10px;
     }
   }
