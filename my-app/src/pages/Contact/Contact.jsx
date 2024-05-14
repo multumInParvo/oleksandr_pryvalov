@@ -12,7 +12,7 @@ function Contact() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        setImageOpacity(0.1);
+        setImageOpacity(0.3);
         setIsLoaded(true);
     }, []);
 

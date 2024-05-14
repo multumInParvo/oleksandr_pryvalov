@@ -1,3 +1,5 @@
+@import '../../styles/Colors.scss';
+
 nav { 
   display: flex;
   justify-content: space-between;
@@ -17,13 +19,13 @@ nav {
       display: flex;
 
       .logo-name {
-        color: rgb(182, 170, 170);
+        color: $name-color;
         transition: transform 1.2s ease; 
       }
 
       .logo-surname {
         font-weight: 400;
-        color: rgb(189, 99, 99);
+        color: $surname-color;
         transition: transform 1.2s ease; 
       }
     }
@@ -51,12 +53,12 @@ nav {
 
   .menu-links {
     letter-spacing: 5px;
-    color: rgb(0, 0, 0);
+    color: $menu-color;
     text-decoration: none;
   }
 
   .instagram-logo {
-    color: rgb(0, 0, 0);
+    color: $menu-color;
     font-size: 20px;
   }
 }

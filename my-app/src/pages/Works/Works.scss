@@ -1,0 +1,22 @@
+
+.gallery-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 0 10%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+    .individual-painting {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
