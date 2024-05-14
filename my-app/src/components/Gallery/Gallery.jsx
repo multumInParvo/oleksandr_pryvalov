@@ -1,24 +1,21 @@
-// Gallery
+// Gallery.js
 import React from 'react';
-import '../styles/Gallery.css';
-import One from '../images/one.webp';
-import Two from '../images/two.webp';
-import Three from '../images/three.webp';
-import Four from '../images/four.webp';
-import Five from '../images/five.webp';
-import Six from '../images/six.webp';
+import '../Gallery/Gallery.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
-function Gallery() {
+function Gallery({ selectedImage, onClose, onNext, onPrevious }) {
+  
     return (
-      <div className="image-gallery">
-        <img src={One} alt="house-one" />
-        <img src={Two} alt="house-two" />
-        <img src={Three} alt="house-three" />
-        <img src={Four} alt="house-four" />
-        <img src={Five} alt="house-five" />
-        <img src={Six} alt="house-six" />
-      </div>
+        <div className="gallery-modal">
+            <span className="close-button" onClick={onClose}><FontAwesomeIcon icon={faXmark} /></span>
+            <span className="button-left" onClick={onPrevious}><FontAwesomeIcon icon={faChevronLeft} /></span>
+            <img className="selected-image" src={selectedImage} alt="Selected Image" />
+            <span className="button-right" onClick={onNext}><FontAwesomeIcon icon={faChevronRight} /></span>
+        </div>
     );
-  }
+}
 
 export default Gallery;

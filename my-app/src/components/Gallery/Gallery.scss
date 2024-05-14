@@ -1,20 +1,45 @@
-/* Gallery.css */
-.image-gallery {
-    padding: 60px 20% 0 20%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 60px; 
+// Gallery.scss
+@import '../../styles/Colors.scss';
+
+.gallery-modal {
+  position: fixed;
+  background-color: #FFFFFF;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .selected-image {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
   }
-  
-  .image-gallery img {
-    width: calc(50% - 30px); 
-    object-fit: fill; 
+
+  .close-button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: $name-color;
+    font-size: 40px;
+    cursor: pointer;
   }
-  
-  @media (max-width: 1024px) {
-    .image-gallery {
-      width: 70%;
-      padding: 50px 15% 0 15%;
-    }
+
+  .button-left {
+    position: absolute;
+    left: 30px;
+    color: $name-color;
+    font-size: 40px;
+    cursor: pointer;
   }
+
+  .button-right {
+    position: absolute;
+    right: 30px;
+    color: $name-color;
+    font-size: 40px;
+    cursor: pointer;
+  }
+}
