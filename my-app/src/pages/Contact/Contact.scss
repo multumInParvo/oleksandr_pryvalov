@@ -16,13 +16,13 @@
         justify-content: space-between;
         color: $menu-color;
         opacity: 0.1;
-        transition: opacity 2000ms ease;
+        transition: opacity 5000ms ease;
 
         .contact-details-color {
             font-size: 12px;
             letter-spacing: 5px;
             color: $surname-color;
-            font-weight: 700;
+            font-weight: 500;
         }
 
         .contact-details {
@@ -46,7 +46,7 @@
             max-height: 690px;
             width: 100%;
             object-fit: cover;
-            transition: opacity 2500ms ease;
+            transition: opacity 3000ms ease;
         }
     }
 }
