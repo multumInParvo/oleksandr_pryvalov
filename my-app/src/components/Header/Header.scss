@@ -53,13 +53,23 @@ nav {
 
   .menu-links {
     letter-spacing: 5px;
-    color: $menu-color;
+    color: $name-color;
     text-decoration: none;
+    transition: color 0.2s; 
+
+    &:hover {
+      color: $menu-color; 
+    }
   }
 
   .instagram-logo {
-    color: $menu-color;
+    color: $name-color;
     font-size: 20px;
+    transition: color 0.2s; 
+
+    &:hover {
+      color: $menu-color; 
+    }
   }
 }
 
