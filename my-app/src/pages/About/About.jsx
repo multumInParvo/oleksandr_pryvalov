@@ -1,13 +1,24 @@
 // About
 import React from 'react';
+import '../About/About.scss';
+import Painter from '../../images/painter.webp';
 
 function About() {
     return (
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut ultrices massa. Nullam cursus odio sed ante luctus tempus. Integer vitae iaculis sem. Pellentesque quis volutpat mi, sed egestas leo. Nam pharetra erat non erat dictum ultrices. Phasellus quis ipsum sed ligula pulvinar ullamcorper. Integer felis erat, scelerisque et lectus non, molestie vehicula turpis. Aenean ac neque sed eros imperdiet dictum eu sit amet felis. Sed egestas turpis auctor placerat porta. Nullam in aliquet leo, id iaculis nisl. Donec feugiat, nibh a dictum bibendum, ligula odio accumsan lacus, vel tempor nibh erat et ipsum. Nunc dapibus quam purus. Aenean ullamcorper convallis erat in ultrices. Cras eget eleifend justo, at cursus metus.
-                Cras ut sem tortor. Maecenas eget ullamcorper magna. Pellentesque vehicula sapien in sapien dapibus, fringilla convallis orci hendrerit. Quisque sit amet scelerisque magna. Nulla tempor mauris vitae urna tincidunt, non fringilla nulla lacinia. Integer purus metus, rutrum ut leo at, suscipit finibus justo. Fusce vitae rhoncus leo. Vestibulum enim ipsum, commodo a nunc ut, tristique pellentesque tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut a dictum ipsum. Sed tincidunt egestas laoreet. In hac habitasse platea dictumst. Vestibulum eget augue lacinia erat tristique vestibulum.
+        <div className='about-container'>
+            <p className='about-text'>
+                Oleksandr Pryvalov (born 1987) grew up in Mykolaiv, Ukraine, but his artistic passion blossomed in Argentina after immigrating there with his family.
+                While exploring various interests in his youth, art, particularly drawing and painting, remained a constant.
+                This fascination with capturing the world visually would become a defining force in his life.
+
+                Now in France, Pryvalov finds inspiration in the stories etched on aging buildings.
+                He sees these weathered facades and crumbling structures not just as decay, but as silent witnesses to time.
+                Each mark left by the elements becomes a potential story waiting to be discovered.
+
+                Through his paintings, Pryvalov aims to bring these forgotten eras back to life.
+                His works go beyond portraying weathered exteriors, transporting viewers to the streets and lives these structures once saw.
             </p>
+            <img className='artist-pic' src={Painter} alt="just a provisionary picture" />
         </div>
     );
 }
