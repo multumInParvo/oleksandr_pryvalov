@@ -17,6 +17,7 @@ nav {
       letter-spacing: 1px;
       text-decoration: none;
       display: flex;
+      flex-direction: column;
 
       .logo-name {
         color: $name-color;
