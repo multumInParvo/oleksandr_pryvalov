@@ -1,6 +1,6 @@
 // Contact
-
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -18,6 +18,9 @@ function Contact() {
 
     return (
         <div className={`contact ${isLoaded ? 'loaded' : ''}`}>
+            <Helmet>
+                <title>CONTACT | oleksandr pryvalov</title>
+            </Helmet>
             <div className='contact-info'>
                 <span className='contact-details'>E-MAIL ME</span>
                 <span className='contact-details-color'>OLEKSANDRPRYV@GMAIL.COM</span>

@@ -1,6 +1,7 @@
 // Works
 
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Paintings from '../../data/Paintings';
 import './Works.scss';
 import Gallery from '../../components/Gallery/Gallery';
@@ -36,6 +37,9 @@ function Works() {
 
     return (
         <div className="gallery-container">
+            <Helmet>
+                <title>WORKS | oleksandr pryvalov</title>
+            </Helmet>
             {Paintings.map((painting, index) => (
                 <div key={index} className="image-container" onClick={() => openModal(index)}>
                     <img className='individual-painting' src={painting.picture} alt={painting.description} />
