@@ -45,21 +45,21 @@ const PaintingsData = [
     },
 
     {
-        picture: House,
-        title: 'the house in Azay le rideau',
-        medium: 'oil on canvas',
-        dimensions: '60x80',
-        year: '2024',
-        description: 'old french houses with red doors',
-    },
-
-    {
         picture: Leaves,
         title: 'Red leaves',
         medium: 'oil on canvas',
         dimensions: '60x70',
         year: '2024',
         description: 'A tree with red leaves',
+    },
+
+    {
+        picture: House,
+        title: 'the house in Azay le rideau',
+        medium: 'oil on canvas',
+        dimensions: '60x80',
+        year: '2024',
+        description: 'old french houses with red doors',
     }
 ];
 
