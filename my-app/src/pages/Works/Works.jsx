@@ -1,7 +1,7 @@
 // Works
 
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Paintings from '../../data/Paintings';
 import './Works.scss';
 import Gallery from '../../components/Gallery/Gallery';
@@ -36,24 +36,26 @@ function Works() {
     }, []);
 
     return (
-        <div className="gallery-container">
+        <HelmetProvider>
             <Helmet>
                 <title>WORKS | oleksandr pryvalov</title>
             </Helmet>
-            {Paintings.map((painting, index) => (
-                <div key={index} className="image-container" onClick={() => openModal(index)}>
-                    <img className='individual-painting' src={painting.picture} alt={painting.description} />
-                </div>
-            ))}
-            {isModalOpen && (
-                <Gallery
-                    painting={Paintings[selectedImageIndex]}
-                    onClose={closeModal}
-                    onNext={nextImage}
-                    onPrevious={previousImage}
-                />
-            )}
-        </div>
+            <div className="gallery-container">
+                {Paintings.map((painting, index) => (
+                    <div key={index} className="image-container" onClick={() => openModal(index)}>
+                        <img className='individual-painting' src={painting.picture} alt={painting.description} />
+                    </div>
+                ))}
+                {isModalOpen && (
+                    <Gallery
+                        painting={Paintings[selectedImageIndex]}
+                        onClose={closeModal}
+                        onNext={nextImage}
+                        onPrevious={previousImage}
+                    />
+                )}
+            </div>
+        </HelmetProvider>
     );
 }
 

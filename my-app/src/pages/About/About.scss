@@ -6,17 +6,11 @@
 
     .deco-line {
         position: absolute;
-        top: 20%;
+        top: 200px;
         width: 0;
         height: 1px;
         background-color: black;
         animation: expand-line 3s forwards;
-    }
-
-    .text-pic-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
         @keyframes expand-line {
             from {
@@ -25,6 +19,24 @@
 
             to {
                 width: 180px;
+            }
+        }
+    }
+
+    .text-pic-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
             }
         }
 
@@ -36,8 +48,8 @@
             width: 50%;
         }
 
-        .artist-pic {
-            padding-top: 60px;
+        .about-image {
+            padding-top: 50px;
             width: 40%;
             padding-right: 10%;
         }
@@ -48,4 +60,4 @@
     .deco-line {
         display: none;
     }
-  }
+}
