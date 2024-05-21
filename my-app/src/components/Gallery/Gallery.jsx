@@ -1,7 +1,7 @@
 // Gallery 
 
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import '../Gallery/Gallery.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -31,37 +31,39 @@ function Gallery({ painting, onClose, onNext, onPrevious }) {
   };
 
   return (
-    <div className="gallery-modal">
-      {currentImageIndex && (
-        <Helmet>
-          <title>{`${currentImageIndex.title} | ${currentImageIndex.medium}`}</title>
-        </Helmet>
-      )}
-      <span className="close-button" onClick={onClose}>
-        <FontAwesomeIcon icon={faXmark} />
-      </span>
-      <span className="button-left" onClick={previousImage}>
-        <FontAwesomeIcon icon={faChevronLeft} />
-      </span>
-      {currentImageIndex && (
-        <img
-          className={`selected-image ${fadeInOut ? 'fade-out' : 'fade-in'}`}
-          src={currentImageIndex.picture}
-          alt={currentImageIndex.description}
-        />
-      )}
-      <span className="button-right" onClick={nextImage}>
-        <FontAwesomeIcon icon={faChevronRight} />
-      </span>
-      {currentImageIndex && (
-        <div className="painting-details">
-          <p>{currentImageIndex.title}<strong> | </strong></p>
-          <p>{currentImageIndex.medium}<strong> | </strong></p>
-          <p>{currentImageIndex.dimensions}<strong> | </strong></p>
-          <p>{currentImageIndex.year}</p>
-        </div>
-      )}
-    </div>
+    <HelmetProvider>
+      <div className="gallery-modal">
+        {currentImageIndex && (
+          <Helmet>
+            <title>{`${currentImageIndex.title} | ${currentImageIndex.medium}`}</title>
+          </Helmet>
+        )}
+        <span className="close-button" onClick={onClose}>
+          <FontAwesomeIcon icon={faXmark} />
+        </span>
+        <span className="button-left" onClick={previousImage}>
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </span>
+        {currentImageIndex && (
+          <img
+            className={`selected-image ${fadeInOut ? 'fade-out' : 'fade-in'}`}
+            src={currentImageIndex.picture}
+            alt={currentImageIndex.description}
+          />
+        )}
+        <span className="button-right" onClick={nextImage}>
+          <FontAwesomeIcon icon={faChevronRight} />
+        </span>
+        {currentImageIndex && (
+          <div className="painting-details">
+            <p>{currentImageIndex.title}<strong> | </strong></p>
+            <p>{currentImageIndex.medium}<strong> | </strong></p>
+            <p>{currentImageIndex.dimensions}<strong> | </strong></p>
+            <p>{currentImageIndex.year}</p>
+          </div>
+        )}
+      </div>
+    </HelmetProvider>
   );
 }
 
