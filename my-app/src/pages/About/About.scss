@@ -1,16 +1,51 @@
 .about-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 0 10%;
 
-    .about-text {
-        margin: 0;
-        width: 50%;
+    .deco-line {
+        position: absolute;
+        top: 20%;
+        width: 0;
+        height: 1px;
+        background-color: black;
+        animation: expand-line 3s forwards;
     }
 
-    .artist-pic {
-        padding-top: 60px;
-        width: 50%;
+    .text-pic-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @keyframes expand-line {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 180px;
+            }
+        }
+
+        .about-text {
+            font-weight: 400;
+            line-height: 2;
+            font-size: 18px;
+            margin: 0;
+            width: 50%;
+        }
+
+        .artist-pic {
+            padding-top: 60px;
+            width: 40%;
+            padding-right: 10%;
+        }
     }
 }
+
+@media (max-width: 1024px) {
+    .deco-line {
+        display: none;
+    }
+  }
