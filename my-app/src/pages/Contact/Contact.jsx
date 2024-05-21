@@ -1,6 +1,6 @@
-// Contact
-import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+// Contact//
+import React from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -8,29 +8,24 @@ import '../Contact/Contact.scss';
 import Brushes from '../../images/brushes.webp';
 
 function Contact() {
-    const [imageOpacity, setImageOpacity] = useState(1);
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    useEffect(() => {
-        setImageOpacity(0.3);
-        setIsLoaded(true);
-    }, []);
-
     return (
-        <div className={`contact ${isLoaded ? 'loaded' : ''}`}>
+        <HelmetProvider>
             <Helmet>
                 <title>CONTACT | oleksandr pryvalov</title>
             </Helmet>
-            <div className='contact-info'>
-                <span className='contact-details'>E-MAIL ME</span>
-                <span className='contact-details-color'>OLEKSANDRPRYV@GMAIL.COM</span>
-                <span className='contact-details'>FOLLOW ME</span>
-                <Link to="https://www.instagram.com/oleksandrpryv/" className='instagram-logo'><FontAwesomeIcon icon={faInstagram} /></Link>
+            <div className='contact-container'>
+                <div className='deco-line'></div>
+                <div className='info-image-container'>
+                    <div className='contact-info'>
+                        <span className='contact-details'>E-MAIL ME</span>
+                        <span className='contact-details-color'>OLEKSANDRPRYV@GMAIL.COM</span>
+                        <span className='contact-details'>FOLLOW ME</span>
+                        <Link to="https://www.instagram.com/oleksandrpryv/" className='instagram-logo'><FontAwesomeIcon icon={faInstagram} /></Link>
+                    </div>
+                    <img src={Brushes} alt="artist brushes" className='contact-image' />
+                </div>
             </div>
-            <div className='contact-image-container'>
-                <img src={Brushes} alt="artist brushes" className='contact-image' style={{ opacity: imageOpacity }} />
-            </div>
-        </div>
+        </HelmetProvider>
     );
 }
 

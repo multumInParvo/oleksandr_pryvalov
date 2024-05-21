@@ -1,56 +1,148 @@
 @import '../../styles/Colors.scss';
 
-.contact {
+.contact-container {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10%;
 
-    .contact-info {
-        z-index: 1;
-        gap: 80px;
-        left: 20%;
+    .deco-line {
         position: absolute;
+        top: 200px;
+        width: 0;
+        height: 1px;
+        background-color: black;
+        animation: expand-line 3s forwards;
+
+        @keyframes expand-line {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 180px;
+            }
+        }
+    }
+
+    .info-image-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        color: $menu-color;
-        opacity: 0.1;
-        transition: opacity 5000ms ease;
+        align-items: center;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
 
-        .contact-details-color {
-            font-size: 12px;
-            letter-spacing: 5px;
-            color: $surname-color;
-            font-weight: 500;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
-        .contact-details {
-            letter-spacing: 5px;
-            font-size: 12px;
-            font-weight: 500;
-        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            font-weight: 400;
+            line-height: 2;
+            font-size: 18px;
+            margin: 0;
+            width: 50%;
 
-        .instagram-logo {
-            font-size: 20px;
-            color: $surname-color;
-        }
-    }
+            .contact-details {
+                letter-spacing: 5px;
+                font-size: 12px;
+                font-weight: 500;
+            }
 
-    .contact-image-container {
-        display: flex;
-        justify-content: center;
-        padding: 0 10%;
+            .contact-details-color {
+                font-size: 12px;
+                letter-spacing: 5px;
+                color: $surname-color;
+                font-weight: 500;
+            }
+
+            .instagram-logo {
+                font-size: 20px;
+                color: $surname-color;
+            }
+        }
 
         .contact-image {
-            max-height: 690px;
-            width: 100%;
-            object-fit: cover;
-            transition: opacity 3000ms ease;
+            padding-top: 50px;
+            width: 50%;
         }
     }
 }
 
-.contact.loaded .contact-info {
-    opacity: 1;
+@media (max-width: 1024px) {
+    .deco-line {
+        display: none;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .contact {
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     position: relative;
+
+//     .contact-info {
+
+
+//         .contact-details-color {
+
+//         }
+
+//         .contact-details {
+
+//         }
+
+//         .instagram-logo {
+
+//         }
+//     }
+
+//     .contact-image-container {
+//         display: flex;
+//         justify-content: center;
+//         padding: 0 10%;
+
+//         .contact-image {
+//             max-height: 690px;
+//             width: 100%;
+//             object-fit: cover;
+//             transition: opacity 3000ms ease;
+//         }
+//     }
+// }
