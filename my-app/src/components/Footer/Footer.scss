@@ -7,7 +7,7 @@
 
   .footer-text {
     display: flex;
-    justify-content: center; /* Center content vertically */
+    justify-content: center;
     align-items: center;
     letter-spacing: 4px;
     font-size: 12px;
@@ -29,6 +29,11 @@
       font-size: 20px;
       color: $name-color;
       padding-left: 10px;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $menu-color;
+      }
     }
   }
 }
