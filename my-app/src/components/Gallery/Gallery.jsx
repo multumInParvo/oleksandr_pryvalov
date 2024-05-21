@@ -1,6 +1,7 @@
 // Gallery 
 
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import '../Gallery/Gallery.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -31,6 +32,11 @@ function Gallery({ painting, onClose, onNext, onPrevious }) {
 
   return (
     <div className="gallery-modal">
+      {currentImageIndex && (
+        <Helmet>
+          <title>{`${currentImageIndex.title} | ${currentImageIndex.medium}`}</title>
+        </Helmet>
+      )}
       <span className="close-button" onClick={onClose}>
         <FontAwesomeIcon icon={faXmark} />
       </span>
@@ -49,9 +55,9 @@ function Gallery({ painting, onClose, onNext, onPrevious }) {
       </span>
       {currentImageIndex && (
         <div className="painting-details">
-          <p>{currentImageIndex.title}<strong>|</strong></p>
-          <p>{currentImageIndex.medium}<strong>|</strong></p>
-          <p>{currentImageIndex.dimensions}<strong>|</strong></p>
+          <p>{currentImageIndex.title}<strong> | </strong></p>
+          <p>{currentImageIndex.medium}<strong> | </strong></p>
+          <p>{currentImageIndex.dimensions}<strong> | </strong></p>
           <p>{currentImageIndex.year}</p>
         </div>
       )}
