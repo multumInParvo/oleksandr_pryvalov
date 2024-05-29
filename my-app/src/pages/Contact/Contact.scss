@@ -74,13 +74,42 @@
         .contact-image {
             padding-top: 50px;
             width: 50%;
+            opacity: 0.7;
         }
     }
 }
 
 @media (max-width: 1024px) {
-    .deco-line {
-        display: none;
+    .contact-container {
+        flex-direction: column;
+
+        .deco-line {
+            display: none;
+        }
+
+        .info-image-container {
+            .contact-info {
+                width: 70%;
+            }
+
+            .contact-image {
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        .info-image-container {
+            .contact-info {
+                width: 90%;
+            }
+
+            .contact-image {
+                width: 90%;
+            }
+        }
     }
 }
 

@@ -1,7 +1,7 @@
 // Paintings
 
 import Chamigny from '../images/chamigny_church.webp';
-import Duck from '../images/duck.webp';
+import HouseInProgressone from '../images/houseone.webp';
 import Helene from '../images/helene.webp';
 import Chicken from '../images/chicken.webp';
 import House from '../images/house.webp';
@@ -18,12 +18,12 @@ const PaintingsData = [
     },
 
     {
-        picture: Duck,
-        title: 'A duck for Helene',
+        picture: HouseInProgressone,
+        title: 'Azay le rideau',
         medium: 'oil on canvas',
-        dimensions: '30x40',
-        year: '2022',
-        description: 'A duck in red suit on green background',
+        dimensions: '60x80',
+        year: '2024',
+        description: 'first picture of progress',
     },
 
     {
