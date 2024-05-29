@@ -8,11 +8,13 @@ import '../Footer/Footer.scss';
 function Footer() {
     return (
         <div className="footer">
-            <p className='footer-text'>Copyright © 2024
-                <span className='footer-name'> OLEKSANDR</span>
-                <span className='footer-surname'>PRYVALOV</span>
+            <div className='footer-text'>copyright © 2024
+                <p className='footer-logo'>
+                    <span className='footer-name'> OLEKSANDR</span>
+                    <span className='footer-surname'>PRYVALOV</span>
+                </p>
                 <Link to="https://www.instagram.com/oleksandrpryv/" className='instagram-logo'><FontAwesomeIcon icon={faInstagram} /></Link>
-            </p>
+            </div>
         </div>
     );
 }
