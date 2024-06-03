@@ -19,7 +19,7 @@ const PaintingsData = [
 
     {
         picture: HouseInProgressone,
-        title: 'Azay le rideau',
+        title: 'Azayza',
         medium: 'oil on canvas',
         dimensions: '60x80',
         year: '2024',
