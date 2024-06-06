@@ -3,7 +3,7 @@ import '../Header/Header.scss';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -46,9 +46,11 @@ function Header() {
                     <FontAwesomeIcon icon={faInstagram} />
                 </Link>
             </div>
-            <span className='menu-icon' onClick={toggleMenu}>
-                <FontAwesomeIcon icon={faBars} />
-            </span>
+            <div className="menu-icon" onClick={toggleMenu}>
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+            </div>
             <div className={`slide-menu ${menuOpen ? 'open' : ''}`} ref={slideMenuRef}>
                 <Link to="/works" className='menu-links' onClick={toggleMenu}>WORKS</Link>
                 <Link to="/about" className='menu-links' onClick={toggleMenu}>ABOUT</Link>
@@ -56,9 +58,9 @@ function Header() {
                 <Link to="https://www.instagram.com/oleksandrpryv/" className='instagram-logo' onClick={toggleMenu}>
                     <FontAwesomeIcon icon={faInstagram} />
                 </Link>
-                <span className='close-icon' onClick={toggleMenu}>
-                    <FontAwesomeIcon icon={faXmark} />
-                </span>
+                <button className='close-button' onClick={toggleMenu}>
+                    ×
+                </button>
             </div>
             <div className={`overlay ${menuOpen ? 'show' : ''}`} onClick={toggleMenu} ref={overlayRef}></div>
         </nav>

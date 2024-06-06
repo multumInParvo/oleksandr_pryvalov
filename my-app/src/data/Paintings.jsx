@@ -1,11 +1,10 @@
 // Paintings
 
 import Chamigny from '../images/chamigny_church.webp';
-import HouseInProgressone from '../images/houseone.webp';
+import Azaylerideau from '../images/azaylerideau.webp';
 import Helene from '../images/helene.webp';
 import Chicken from '../images/chicken.webp';
-import House from '../images/house.webp';
-import Leaves from '../images/leaves.webp';
+import Legumes from '../images/legumes.webp'
 
 const PaintingsData = [
     {
@@ -18,12 +17,12 @@ const PaintingsData = [
     },
 
     {
-        picture: HouseInProgressone,
-        title: 'Azayza',
+        picture: Azaylerideau,
+        title: 'Azay-le-Rideau',
         medium: 'oil on canvas',
         dimensions: '60x80',
         year: '2024',
-        description: 'first picture of progress',
+        description: 'final version',
     },
 
     {
@@ -45,21 +44,12 @@ const PaintingsData = [
     },
 
     {
-        picture: Leaves,
-        title: 'Red leaves',
+        picture: Legumes,
+        title: 'vegetables',
         medium: 'oil on canvas',
-        dimensions: '60x70',
-        year: '2024',
+        dimensions: '30x40',
+        year: '2022',
         description: 'A tree with red leaves',
-    },
-
-    {
-        picture: House,
-        title: 'the house in Azay le rideau',
-        medium: 'oil on canvas',
-        dimensions: '60x80',
-        year: '2024',
-        description: 'old french houses with red doors',
     }
 ];
 

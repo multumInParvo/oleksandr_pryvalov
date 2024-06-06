@@ -1,3 +1,5 @@
+@import '../../styles/Colors.scss';
+
 .about-container {
     display: flex;
     flex-direction: row;
@@ -46,12 +48,14 @@
             font-size: 16px;
             margin: 0;
             width: 50%;
+            padding-bottom: 50px;
         }
 
         .about-image {
-            padding-top: 50px;
-            width: 60%;
-            padding-left: 10%;
+            border: 10px solid white;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            max-width: 550px;
+            width: 50%;
         }
     }
 }
@@ -68,7 +72,6 @@
             }
 
             .about-image {
-                padding-top: 50px;
                 width: 70%;
                 padding-left: 0;
             }
@@ -85,8 +88,7 @@
             }
 
             .about-image {
-                padding-top: 50px;
-                width: 100%;
+                width: 90%;
                 padding-right: 0;
             }
         }

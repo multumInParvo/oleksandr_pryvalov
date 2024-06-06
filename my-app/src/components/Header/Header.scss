@@ -143,13 +143,19 @@ nav {
   }
 
   .menu-icon {
-    color: $name-color;
-    font-size: 24px;
     display: block;
     position: absolute;
     top: 20px;
     right: 20px;
     cursor: pointer;
+
+    .bar {
+      width: 24px;
+      height: 2px;
+      background-color: #808080;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
   }
 
   .slide-menu {
@@ -184,12 +190,17 @@ nav {
       color: $menu-color;
     }
 
-    .close-icon {
+    .close-button {
+      line-height: 0.5;
+      padding: 0;
       position: absolute;
       top: 20px;
       right: 20px;
-      font-size: 24px;
-      color: $name-color;
+      font-size: 80px;
+      font-weight: 100;
+      color: #808080;
+      background: none;
+      border: none;
       cursor: pointer;
     }
   }

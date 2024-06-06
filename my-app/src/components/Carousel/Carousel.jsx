@@ -8,12 +8,13 @@ import '../Carousel/Carousel.scss';
 
 const Carousel = () => {
     const settings = {
+        arrows: false,
         infinite: true,
-        speed: 5000,
+        speed: 4000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 4000,
         fade: true,
     };
 
@@ -22,7 +23,7 @@ const Carousel = () => {
             <Slider {...settings}>
                 {Paintings.map((painting, index) => (
                     <div key={index} className="image-info-container">
-                        <Link to="/works" className="image-info-container-link">
+                        <Link to={`/gallery/${index}`} className="image-info-container-link">
                             <img className="carousel-image" src={painting.picture} alt={painting.description} />
                         </Link>
                     </div>

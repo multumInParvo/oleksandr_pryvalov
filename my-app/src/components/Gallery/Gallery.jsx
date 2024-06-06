@@ -1,70 +1,79 @@
-// Gallery 
+import React, { useState, useEffect, useRef } from 'react';
+import Slider from 'react-slick';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useSwipeable } from 'react-swipeable';
+import Paintings from '../../data/Paintings';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './Gallery.scss';
 
-import React, { useState, useEffect } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import '../Gallery/Gallery.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faXmark } from '@fortawesome/free-solid-svg-icons';
-
-function Gallery({ painting, onClose, onNext, onPrevious }) {
-  const [fadeInOut, setFadeInOut] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(null);
+const Gallery = () => {
+  const { index } = useParams();
+  const navigate = useNavigate();
+  const initialIndex = parseInt(index, 10);
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
-    setCurrentImageIndex(painting);
-  }, [painting]);
+    setCurrentIndex(initialIndex);
+  }, [initialIndex]);
 
-  const nextImage = () => {
-    setFadeInOut(true);
-    setTimeout(() => {
-      onNext();
-      setFadeInOut(false);
-    }, 150);
+  const settings = {
+    initialSlide: initialIndex,
+    infinite: true,
+    speed: 320,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    arrows: false,
+    beforeChange: (oldIndex, newIndex) => setCurrentIndex(newIndex),
   };
 
-  const previousImage = () => {
-    setFadeInOut(true);
-    setTimeout(() => {
-      onPrevious();
-      setFadeInOut(false);
-    }, 150);
+  const closeModal = () => {
+    navigate('/');
   };
+
+  const stopPropagation = (e) => {
+    e.stopPropagation();
+  };
+
+  const handlePrevClick = (e) => {
+    e.stopPropagation();
+    sliderRef.current.slickPrev();
+  };
+
+  const handleNextClick = (e) => {
+    e.stopPropagation();
+    sliderRef.current.slickNext();
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => sliderRef.current.slickNext(),
+    onSwipedRight: () => sliderRef.current.slickPrev(),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
 
   return (
-    <HelmetProvider>
-      <div className="gallery-modal">
-        {currentImageIndex && (
-          <Helmet>
-            <title>{`${currentImageIndex.title} | ${currentImageIndex.medium}`}</title>
-          </Helmet>
-        )}
-        <span className="close-button" onClick={onClose}>
-          <FontAwesomeIcon icon={faXmark} />
-        </span>
-        <span className="button-left" onClick={previousImage}>
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </span>
-        {currentImageIndex && (
-          <img
-            className={`selected-image ${fadeInOut ? 'fade-out' : 'fade-in'}`}
-            src={currentImageIndex.picture}
-            alt={currentImageIndex.description}
-          />
-        )}
-        <span className="button-right" onClick={nextImage}>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </span>
-        {currentImageIndex && (
-          <div className="painting-details">
-            <p>{currentImageIndex.title}<strong> | </strong></p>
-            <p>{currentImageIndex.medium}<strong> | </strong></p>
-            <p>{currentImageIndex.dimensions}<strong> | </strong></p>
-            <p>{currentImageIndex.year}</p>
-          </div>
-        )}
+    <div className="lightbox-overlay">
+      <div className="lightbox" onClick={stopPropagation} {...swipeHandlers}>
+        <Slider ref={sliderRef} {...settings}>
+          {Paintings.map((painting, idx) => (
+            <img key={idx} src={painting.picture} alt={painting.title} />
+          ))}
+        </Slider>
       </div>
-    </HelmetProvider>
+      <button className="close-button" onClick={closeModal}>×</button>
+      <button className="nav-button prev-button" onClick={handlePrevClick}>‹</button>
+      <button className="nav-button next-button" onClick={handleNextClick}>›</button>
+      <div className="painting-details">
+        <p>{Paintings[currentIndex].title}<strong>|</strong></p>
+        <p>{Paintings[currentIndex].medium}<strong>|</strong></p>
+        <p>{Paintings[currentIndex].dimensions}<strong>|</strong></p>
+        <p>{Paintings[currentIndex].year}</p>
+      </div>
+    </div>
   );
-}
+};
 
 export default Gallery;
