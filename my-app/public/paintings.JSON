@@ -1,0 +1,50 @@
+[
+    {
+        "picture": "/images/chamigny_church.webp",
+        "title": "Chamigny",
+        "medium": "oil on canvas",
+        "dimensions": "30x40",
+        "year": "2024",
+        "description": "red door and beige wall in Chamigny"
+    },
+    {
+        "picture": "/images/azaylerideau.webp",
+        "title": "Azay-le-Rideau",
+        "medium": "oil on canvas",
+        "dimensions": "60x80",
+        "year": "2024",
+        "description": " painting of old houses with red doors"
+    },
+    {
+        "picture": "/images/helene.webp",
+        "title": "Hélène",
+        "medium": "oil on canvas",
+        "dimensions": "60x80",
+        "year": "2024",
+        "description": "a woman in blue sitting reading on yellow armmchair"
+    },
+    {
+        "picture": "/images/6PM.webp",
+        "title": "6PM",
+        "medium": "oil on canvas",
+        "dimensions": "60x80",
+        "year": "2024",
+        "description": "painting of a red porcelain chicken staring at a scared blue owl"
+    },
+    {
+        "picture": "/images/legumes.webp",
+        "title": "Legumes",
+        "medium": "oil on canvas",
+        "dimensions": "30x40",
+        "year": "2022",
+        "description": "A tree with red leaves"
+    },
+    {
+        "picture": "/images/campestre.webp",
+        "title": "Campestre",
+        "medium": "oil on canvas",
+        "dimensions": "30x40",
+        "year": "2022",
+        "description": "food on table"
+    }
+]
