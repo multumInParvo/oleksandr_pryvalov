@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import '../Contact/Contact.scss';
-import Brushes from '../../images/brushes.webp';
 
 function Contact() {
     return (
@@ -22,7 +21,7 @@ function Contact() {
                         <span className='contact-details'>FOLLOW ME</span>
                         <Link to="https://www.instagram.com/oleksandrpryv/" className='instagram-logo'><FontAwesomeIcon icon={faInstagram} /></Link>
                     </div>
-                    <img src={Brushes} alt="artist brushes" className='contact-image' />
+                    <img src="/images/brushes.webp" alt="artist brushes" className='contact-image' />
                 </div>
             </div>
         </HelmetProvider>
