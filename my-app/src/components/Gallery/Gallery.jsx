@@ -61,9 +61,9 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery-container" style={{ minHeight: '70vh', visibility: isLoading ? 'hidden' : 'visible' }}>
+    <div className={`gallery-container ${isLoading ? 'loading' : ''}`}>
       {paintings.length > 0 && (
-        <div className="lightbox-overlay" onClick={closeModal}>
+        <div className="lightbox-overlay">
           <div className="lightbox" onClick={stopPropagation}>
             <Slider ref={sliderRef} {...settings}>
               {paintings.map((painting, idx) => (

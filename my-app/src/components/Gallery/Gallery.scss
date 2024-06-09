@@ -1,6 +1,10 @@
-/* Gallery.scss */
 .gallery-container {
   min-height: 70vh; /* Apply minimum height to prevent footer shift */
+  visibility: visible;
+
+  &.loading {
+    visibility: hidden;
+  }
 }
 
 .lightbox-overlay {
