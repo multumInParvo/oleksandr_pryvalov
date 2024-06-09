@@ -1,4 +1,3 @@
-// src/components/Gallery/Gallery.js
 import React, { useState, useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
@@ -13,17 +12,21 @@ const Gallery = () => {
   const initialIndex = parseInt(index, 10);
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [paintings, setPaintings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const sliderRef = useRef(null);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(`${process.env.PUBLIC_URL}/paintings.json`)
       .then((response) => response.json())
       .then((data) => {
         setPaintings(data);
         setCurrentIndex(initialIndex);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching paintings:', error);
+        setIsLoading(false);
       });
   }, [initialIndex]);
 
@@ -58,26 +61,28 @@ const Gallery = () => {
   };
 
   return (
-    paintings.length > 0 && (
-      <div className="lightbox-overlay" onClick={closeModal}>
-        <div className="lightbox" onClick={stopPropagation}>
-          <Slider ref={sliderRef} {...settings}>
-            {paintings.map((painting, idx) => (
-              <img key={idx} src={painting.picture} alt={painting.title} />
-            ))}
-          </Slider>
+    <div className="gallery-container" style={{ minHeight: '70vh', visibility: isLoading ? 'hidden' : 'visible' }}>
+      {paintings.length > 0 && (
+        <div className="lightbox-overlay" onClick={closeModal}>
+          <div className="lightbox" onClick={stopPropagation}>
+            <Slider ref={sliderRef} {...settings}>
+              {paintings.map((painting, idx) => (
+                <img key={idx} src={painting.picture} alt={painting.title} />
+              ))}
+            </Slider>
+          </div>
+          <button className="close-button" onClick={closeModal}>×</button>
+          <button className="nav-button prev-button" onClick={handlePrevClick}>‹</button>
+          <button className="nav-button next-button" onClick={handleNextClick}>›</button>
+          <div className="painting-details">
+            <p>{paintings[currentIndex].title}<strong>|</strong></p>
+            <p>{paintings[currentIndex].medium}<strong>|</strong></p>
+            <p>{paintings[currentIndex].dimensions}<strong>|</strong></p>
+            <p>{paintings[currentIndex].year}</p>
+          </div>
         </div>
-        <button className="close-button" onClick={closeModal}>×</button>
-        <button className="nav-button prev-button" onClick={handlePrevClick}>‹</button>
-        <button className="nav-button next-button" onClick={handleNextClick}>›</button>
-        <div className="painting-details">
-          <p>{paintings[currentIndex].title}<strong>|</strong></p>
-          <p>{paintings[currentIndex].medium}<strong>|</strong></p>
-          <p>{paintings[currentIndex].dimensions}<strong>|</strong></p>
-          <p>{paintings[currentIndex].year}</p>
-        </div>
-      </div>
-    )
+      )}
+    </div>
   );
 };
 
