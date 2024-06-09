@@ -1,21 +1,23 @@
+// src/pages/Works/Works.js
 import React, { useState, useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import './Works.scss';
 
 function Works() {
   const [paintings, setPaintings] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/paintings.json`)
-      .then(response => response.json())
-      .then(data => setPaintings(data))
-      .catch(error => console.error('Error fetching paintings:', error));
+      .then((response) => response.json())
+      .then((data) => setPaintings(data))
+      .catch((error) => console.error('Error fetching paintings:', error));
   }, []);
 
   if (paintings.length === 0) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   return (
@@ -30,7 +32,10 @@ function Works() {
           <Masonry gutter="10px">
             {paintings.map((painting, index) => (
               <div key={index} className="image-container">
-                <Link to={`/gallery/${index}`}>
+                <Link
+                  to={`/gallery/${index}`}
+                  state={{ from: location.pathname }}
+                >
                   <img className='individual-painting' src={painting.picture} alt={painting.description} />
                 </Link>
               </div>
