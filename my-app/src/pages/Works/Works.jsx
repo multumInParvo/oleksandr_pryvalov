@@ -16,10 +16,6 @@ function Works() {
       .catch((error) => console.error('Error fetching paintings:', error));
   }, []);
 
-  if (paintings.length === 0) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <HelmetProvider>
       <Helmet>
