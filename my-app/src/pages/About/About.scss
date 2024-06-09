@@ -1,6 +1,7 @@
 @import '../../styles/Colors.scss';
 
 .about-container {
+    min-height: 70vh;
     display: flex;
     flex-direction: row;
     align-items: center;
