@@ -1,4 +1,4 @@
-// App
+// App //
 import { Routes, Route } from 'react-router-dom';
 import '../src/styles/Global.scss';
 import React from 'react';

@@ -1,3 +1,4 @@
+// Header //
 import React, { useState, useRef, useEffect } from 'react';
 import '../Header/Header.scss';
 import { Link } from 'react-router-dom';

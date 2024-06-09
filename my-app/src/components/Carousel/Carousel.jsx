@@ -1,4 +1,4 @@
-// src/components/Carousel/Carousel.js
+// Carousel //
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { Link, useLocation } from 'react-router-dom';

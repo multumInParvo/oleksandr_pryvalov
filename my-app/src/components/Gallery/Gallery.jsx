@@ -1,3 +1,4 @@
+// Gallery //
 import React, { useState, useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';

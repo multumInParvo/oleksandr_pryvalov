@@ -1,4 +1,4 @@
-// Home
+// Home //
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import '../Home/Home.scss';

@@ -1,3 +1,4 @@
+// About //
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import '../About/About.scss';
