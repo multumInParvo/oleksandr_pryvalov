@@ -47,9 +47,9 @@ function Header() {
                 </Link>
             </div>
             <div className="menu-icon" onClick={toggleMenu}>
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
+                <div className="bar-one"></div>
+                <div className="bar-two"></div>
+                <div className="bar-three"></div>
             </div>
             <div className={`slide-menu ${menuOpen ? 'open' : ''}`} ref={slideMenuRef}>
                 <Link to="/works" className='menu-links' onClick={toggleMenu}>WORKS</Link>
