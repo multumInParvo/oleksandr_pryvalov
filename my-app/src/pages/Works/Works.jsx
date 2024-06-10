@@ -23,7 +23,7 @@ function Works() {
       </Helmet>
       <div className="gallery-container">
         <ResponsiveMasonry
-          columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+          columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 3 }}
         >
           <Masonry gutter="10px">
             {paintings.map((painting, index) => (
