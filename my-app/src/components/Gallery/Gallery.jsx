@@ -1,9 +1,11 @@
-// Gallery //
-import React, { useState, useEffect, useRef } from 'react';
-import Slider from 'react-slick';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/a11y';
+import { Navigation, Pagination, A11y } from 'swiper/modules';
 import './Gallery.scss';
 
 const Gallery = () => {
@@ -14,7 +16,6 @@ const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [paintings, setPaintings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const sliderRef = useRef(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,17 +32,6 @@ const Gallery = () => {
       });
   }, [initialIndex]);
 
-  const settings = {
-    initialSlide: initialIndex,
-    infinite: true,
-    speed: 320,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: true,
-    arrows: false,
-    beforeChange: (oldIndex, newIndex) => setCurrentIndex(newIndex),
-  };
-
   const closeModal = () => {
     const from = location.state?.from || '/';
     navigate(from);
@@ -51,30 +41,30 @@ const Gallery = () => {
     e.stopPropagation();
   };
 
-  const handlePrevClick = (e) => {
-    e.stopPropagation();
-    sliderRef.current.slickPrev();
-  };
-
-  const handleNextClick = (e) => {
-    e.stopPropagation();
-    sliderRef.current.slickNext();
-  };
-
   return (
     <div className={`gallery-container ${isLoading ? 'loading' : ''}`}>
       {paintings.length > 0 && (
         <div className="lightbox-overlay">
           <div className="lightbox" onClick={stopPropagation}>
-            <Slider ref={sliderRef} {...settings}>
+            <Swiper
+              modules={[Navigation, Pagination, A11y]}
+              spaceBetween={0}
+              slidesPerView={1}
+              initialSlide={initialIndex}
+              loop={true} 
+              onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)} 
+              pagination={{ clickable: true }}
+              navigation
+              touchStartPreventDefault={false}
+            >
               {paintings.map((painting, idx) => (
-                <img key={idx} src={painting.picture} alt={painting.title} />
+                <SwiperSlide key={idx}>
+                  <img src={painting.picture} alt={painting.title} />
+                </SwiperSlide>
               ))}
-            </Slider>
+            </Swiper>
           </div>
           <button className="close-button" onClick={closeModal}>×</button>
-          <button className="nav-button prev-button" onClick={handlePrevClick}>‹</button>
-          <button className="nav-button next-button" onClick={handleNextClick}>›</button>
           <div className="painting-details">
             <p>{paintings[currentIndex].title}<strong>|</strong></p>
             <p>{paintings[currentIndex].medium}<strong>|</strong></p>

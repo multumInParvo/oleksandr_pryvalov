@@ -1,5 +1,5 @@
 .gallery-container {
-  min-height: 70vh; /* Apply minimum height to prevent footer shift */
+  min-height: 70vh;
   visibility: visible;
 
   &.loading {
@@ -26,15 +26,31 @@
   max-height: 650px;
   max-width: 80%;
 
-  img {
-    max-width: 100%;
-    height: 650px;
-    object-fit: contain;
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      height: 650px;
+      object-fit: contain;
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #808080;
+  }
+
+  .swiper-pagination-bullet {
+    display: none;
+  }
+
+  .swiper-pagination-bullet-active {
+    display: none;
   }
 }
 
-.close-button,
-.nav-button {
+.close-button {
   line-height: 0.5;
   padding: 0;
   position: absolute;
@@ -45,27 +61,12 @@
   font-weight: 100;
   cursor: pointer;
   z-index: 1;
-}
-
-.close-button {
   right: 20px;
   top: 20px;
 }
 
-.prev-button {
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.next-button {
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .painting-details {
-  margin-top: 70px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   color: #808080;
@@ -87,21 +88,22 @@
   .lightbox-overlay {
     .lightbox {
       position: relative;
-      max-height: 650px;
+      max-height: 500px;
       max-width: 100%;
 
       img {
-        height: 650px;
+        height: 500px;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
       }
     }
 
     .painting-details {
       display: flex;
       justify-content: center;
-    }
-
-    .nav-button {
-      display: none;
     }
   }
 }
@@ -112,8 +114,13 @@
       position: relative;
       max-height: 500px;
 
-      img {
-        max-height: 500px;
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+
+        img {
+          max-height: 500px;
+        }
       }
     }
 
@@ -126,10 +133,6 @@
       strong {
         display: none;
       }
-    }
-
-    .nav-button {
-      display: none;
     }
   }
 }
