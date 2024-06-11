@@ -25,7 +25,7 @@ function Works() {
         <ResponsiveMasonry
           columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 3 }}
         >
-          <Masonry gutter="10px">
+          <Masonry gutter="5px">
             {paintings.map((painting, index) => (
               <div key={index} className="image-container">
                 <Link
