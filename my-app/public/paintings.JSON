@@ -32,14 +32,6 @@
         "description": "painting of a red porcelain chicken staring at a scared blue owl"
     },
     {
-        "picture": "/images/legumes.webp",
-        "title": "Legumes",
-        "medium": "oil on canvas",
-        "dimensions": "30x40",
-        "year": "2022",
-        "description": "A tree with red leaves"
-    },
-    {
         "picture": "/images/campestre.webp",
         "title": "Campestre",
         "medium": "oil on canvas",
