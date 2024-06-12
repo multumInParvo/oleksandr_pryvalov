@@ -18,26 +18,6 @@
 
     .footer-logo {
       margin: 0;
-
-      .footer-name {
-        letter-spacing: 1px;
-        padding-left: 10px;
-      }
-
-      .footer-surname {
-        letter-spacing: 1px;
-      }
-    }
-
-    .instagram-logo {
-      font-size: 16px;
-      color: $name-color;
-      padding-left: 10px;
-      transition: color 0.2s;
-
-      &:hover {
-        color: $menu-color;
-      }
     }
   }
 }
@@ -51,16 +31,6 @@
 
       .footer-logo {
         display: flex;
-
-        .footer-name {
-          padding: 0;
-        }
-      }
-
-      .instagram-logo {
-        margin-bottom: 10px;
-        color: $menu-color;
-        transition: none;
       }
     }
   }
