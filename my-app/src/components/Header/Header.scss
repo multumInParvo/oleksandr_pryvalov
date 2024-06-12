@@ -98,28 +98,24 @@ nav {
 
 @media (max-width: 768px) {
   nav {
-    padding: 50px 10%;
+    padding: 30px 10%;
     flex-direction: column;
     align-items: start;
     justify-content: center;
 
     .logo {
-      padding: 0 5%;
+      padding: 0;
       width: 90%;
 
       .logo-name-surname {
-        font-size: 22px;
-        flex-direction: column;
+        font-size: 18px;
 
         .logo-name {
-          font-weight: 20;
-          color: $name-color;
+          font-weight: 400;
           transition: transform 1.2s ease;
         }
 
         .logo-surname {
-          font-weight: 400;
-          color: $surname-color;
           transition: transform 1.2s ease;
         }
       }
@@ -145,29 +141,15 @@ nav {
   .menu-icon {
     display: block;
     position: absolute;
-    top: 20px;
+    top: 26px;
     right: 20px;
     cursor: pointer;
 
-    .bar-one {
-      width: 12px;
-      height: 2px;
-      background-color: #808080;
-      margin: 6px 0;
-      transition: 0.4s;
-    }
-    .bar-two {
+    .bar {
       width: 24px;
       height: 2px;
       background-color: #808080;
       margin: 6px 0;
-      transition: 0.4s;
-    }
-    .bar-three {
-      width: 12px;
-      height: 2px;
-      background-color: #808080;
-      margin: 6px 12px;
       transition: 0.4s;
     }
   }
@@ -179,6 +161,7 @@ nav {
     align-items: center;
     position: fixed;
     top: 0;
+    bottom: 0;
     right: 0;
     width: 50%;
     height: 100%;
@@ -191,7 +174,6 @@ nav {
     .menu-links {
       padding-left: 20px;
       font-size: 14px;
-      margin: 20px 0;
       color: $menu-color;
       text-decoration: none;
       transition: color 0.2s;
@@ -200,11 +182,10 @@ nav {
     .instagram-logo {
       padding-left: 20px;
       font-size: 16px;
-      margin-top: 20px;
       color: $menu-color;
     }
 
-    .close-button {
+    .close-button-menu {
       line-height: 0.5;
       padding: 0;
       position: absolute;
