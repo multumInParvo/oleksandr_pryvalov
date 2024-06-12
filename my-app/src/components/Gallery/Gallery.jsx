@@ -3,12 +3,14 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/a11y';
-import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { Navigation, A11y } from 'swiper/modules';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import './Gallery.scss';
 
 const Gallery = () => {
+  
   const { index } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -47,13 +49,12 @@ const Gallery = () => {
         <div className="lightbox-overlay">
           <div className="lightbox" onClick={stopPropagation}>
             <Swiper
-              modules={[Navigation, Pagination, A11y]}
+              modules={[Navigation, A11y]}
               spaceBetween={0}
               slidesPerView={1}
               initialSlide={initialIndex}
-              loop={true} 
-              onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)} 
-              pagination={{ clickable: true }}
+              loop={true}
+              onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
               navigation
               touchStartPreventDefault={false}
             >
@@ -64,7 +65,9 @@ const Gallery = () => {
               ))}
             </Swiper>
           </div>
-          <button className="close-button" onClick={closeModal}>×</button>
+          <button className="close-button" onClick={closeModal}>
+            <FontAwesomeIcon icon={faArrowLeftLong} />
+          </button>
           <div className="painting-details">
             <p>{paintings[currentIndex].title}<strong>|</strong></p>
             <p>{paintings[currentIndex].medium}<strong>|</strong></p>
