@@ -5,12 +5,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/a11y';
 import { Navigation, A11y } from 'swiper/modules';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import './Gallery.scss';
 
 const Gallery = () => {
-  
   const { index } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -64,16 +61,16 @@ const Gallery = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+            <div className="painting-container">
+              <p className="painting-title">{paintings[currentIndex].title}</p>
+              <div className="painting-details">
+                <p>{paintings[currentIndex].medium}<strong>|</strong></p>
+                <p>{paintings[currentIndex].dimensions}<strong>|</strong></p>
+                <p>{paintings[currentIndex].year}</p>
+              </div>
+            </div>
           </div>
-          <button className="close-button" onClick={closeModal}>
-            <FontAwesomeIcon icon={faArrowLeftLong} />
-          </button>
-          <div className="painting-details">
-            <p>{paintings[currentIndex].title}<strong>|</strong></p>
-            <p>{paintings[currentIndex].medium}<strong>|</strong></p>
-            <p>{paintings[currentIndex].dimensions}<strong>|</strong></p>
-            <p>{paintings[currentIndex].year}</p>
-          </div>
+          <button className="close-button" onClick={closeModal}></button>
         </div>
       )}
     </div>

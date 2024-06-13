@@ -22,12 +22,14 @@
 }
 
 .lightbox {
+  margin-top: 50px;
   position: relative;
-  max-height: 650px;
+  max-height: 800px;
   max-width: 80%;
 
   .swiper-slide {
     display: flex;
+    align-items: start;
     justify-content: center;
 
     img {
@@ -41,16 +43,41 @@
   .swiper-button-next {
     color: #808080;
   }
+
+  .painting-container {
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    .painting-title {
+      font-family: 'Cinzel', sans-serif;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .painting-details {
+      display: flex;
+      flex-direction: row;
+      color: #ffffff;
+      letter-spacing: 1px;
+      font-weight: 500;
+      font-size: 12px;
+      text-align: center;
+
+        strong {
+          margin: 0 5px;
+        }
+    }
+  }
 }
 
 .close-button {
-  font-size: 30px;
-  color: #808080;
-  font-weight: 100;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 20px;
   background: none;
   border: none;
@@ -58,74 +85,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  z-index: 3;
 
-.painting-details {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-  color: #808080;
-  letter-spacing: 1px;
-  font-weight: 500;
-  font-size: 12px;
-  text-align: center;
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0px;
+  }
 
-  p {
-    margin: 0;
-
-    strong {
-      margin: 0 5px;
-    }
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 1px;
+    top: 12px;
   }
 }
 
 @media (max-width: 768px) {
   .lightbox-overlay {
     .lightbox {
-      position: relative;
-      max-height: 500px;
       max-width: 100%;
 
       img {
+        max-width: 100%;
         height: 500px;
+        object-fit: contain;
       }
 
       .swiper-button-prev,
       .swiper-button-next {
-        display: none;
-      }
-    }
-
-    .painting-details {
-      display: flex;
-      justify-content: center;
-    }
-  }
-}
-
-@media (max-width: 400px) {
-  .lightbox-overlay {
-    .lightbox {
-      display: flex;
-      align-items: center;
-
-      .swiper-slide {
-        display: flex;
-        justify-content: center;
-
-        img {
-          height: 550px;
-        }
-      }
-    }
-
-    .painting-details {
-      width: 90%;
-      margin-top: 30px;
-      align-items: start;
-      flex-direction: column;
-
-      strong {
         display: none;
       }
     }
