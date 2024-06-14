@@ -44,6 +44,9 @@ const Gallery = () => {
     <div className={`gallery-container ${isLoading ? 'loading' : ''}`}>
       {paintings.length > 0 && (
         <div className="lightbox-overlay">
+          <div className="return-button-container">
+            <button className="return-button" onClick={closeModal}></button>
+          </div>
           <div className="lightbox" onClick={stopPropagation}>
             <Swiper
               modules={[Navigation, A11y]}
@@ -70,7 +73,6 @@ const Gallery = () => {
               </div>
             </div>
           </div>
-          <button className="close-button" onClick={closeModal}></button>
         </div>
       )}
     </div>
