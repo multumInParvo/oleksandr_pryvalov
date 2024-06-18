@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 10%;
+    padding: 0 5%;
 
     .info-image-container {
         display: flex;
@@ -52,7 +52,6 @@
             .contact-details-color {
                 font-size: 12px;
                 letter-spacing: 5px;
-                color: $surname-color;
                 font-weight: 500;
             }
 
@@ -70,39 +69,28 @@
     }
 }
 
-@media (max-width: 1024px) {
+
+
+@media (max-width: 768px) {
     .title-contact {
         font-size: 1.4rem;
     }
-
-    .contact-container {
-        flex-direction: column;
-
-        .deco-line {
-            display: none;
-        }
-
-        .info-image-container {
-            .contact-info {
-                width: 70%;
-            }
-
-            .contact-image {
-                width: 70%;
-            }
-        }
-    }
-}
-
-@media (max-width: 768px) {
     .contact-container {
         .info-image-container {
             .contact-info {
-                width: 90%;
+                width: 100%;
+
+                .contact-details {
+                    letter-spacing: 4px;
+                }
+
+                .contact-details-color {
+                    letter-spacing: 4px;
+                }
             }
 
             .contact-image {
-                width: 90%;
+                width: 100%;
             }
         }
     }
