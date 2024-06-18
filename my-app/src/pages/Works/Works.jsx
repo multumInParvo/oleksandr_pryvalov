@@ -1,8 +1,9 @@
-// Works //
 import React, { useState, useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link, useLocation } from 'react-router-dom';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Works.scss';
 
 function Works() {
@@ -33,7 +34,12 @@ function Works() {
                   to={`/gallery/${index}`}
                   state={{ from: location.pathname }}
                 >
-                  <img className='individual-painting' src={painting.picture} alt={painting.description} />
+                  <LazyLoadImage
+                    className='individual-painting'
+                    src={painting.picture}
+                    alt={painting.description}
+                    effect="blur"
+                  />
                 </Link>
               </div>
             ))}
