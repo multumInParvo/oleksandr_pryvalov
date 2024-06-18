@@ -36,7 +36,7 @@
         user-select: none;
         line-height: 0.5;
         position: fixed;
-        right: 30px;
+        right: 20px;
         padding: 0;
         font-size: 80px;
         cursor: pointer;
@@ -87,7 +87,7 @@
 
         .painting-title {
           font-family: 'Cinzel', sans-serif;
-          font-size: 20px;
+          font-size: 30px;
           margin: 0;
         }
 
@@ -125,7 +125,7 @@
 
       .return-button {
         position: fixed;
-        left: 30px;
+        left: 20px;
         width: 40px;
         height: 40px;
         background: none;
@@ -150,7 +150,8 @@
           display: inline-block;
           width: 15px;
           height: 15px;
-          border-left: 2px solid #808080;;
+          border-left: 2px solid #808080;
+          ;
           border-top: 2px solid #808080;
           transform: rotate(-45deg);
           position: absolute;
