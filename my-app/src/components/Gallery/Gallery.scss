@@ -121,6 +121,7 @@
       }
 
       .return-button {
+        
         position: fixed;
         left: 30px;
         width: 40px;
@@ -137,7 +138,7 @@
           display: inline-block;
           width: 30px;
           height: 1px;
-          background-color: #ffffff;
+          background-color: #808080;
           position: absolute;
           left: 0px;
         }
@@ -147,8 +148,8 @@
           display: inline-block;
           width: 15px;
           height: 15px;
-          border-left: 2px solid #ffffff;
-          border-top: 2px solid #ffffff;
+          border-left: 2px solid #808080;;
+          border-top: 2px solid #808080;
           transform: rotate(-45deg);
           position: absolute;
           left: 1px;
