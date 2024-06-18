@@ -36,19 +36,3 @@
     }
   }
 }
-
-@media (max-width: 375px) {
-  .carousel {
-    padding: 0;
-    width: 98%;
-
-    .image-info-container {
-      height: 400px;
-
-      .carousel-image {
-        height: 400px;
-        object-fit: contain;
-      }
-    }
-  }
-}
