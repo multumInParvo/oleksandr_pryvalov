@@ -13,35 +13,14 @@ nav {
 
     .logo-name-surname {
       font-size: 1.5rem;
-      font-weight: 300;
       letter-spacing: 2px;
       text-decoration: none;
       display: flex;
       flex-direction: row;
-
-      .logo-name {
-        font-weight: 20;
-        color: $name-color;
-        transition: transform 1.2s ease;
-      }
-
-      .logo-surname {
-        font-weight: 400;
-        color: $surname-color;
-        transition: transform 1.2s ease;
-      }
-    }
-
-    &:hover {
-      .logo-name {
-        transform: translateX(-15px);
-        transition: transform 0.3s ease;
-      }
-
-      .logo-surname {
-        transform: translateX(15px);
-        transition: transform 0.3s ease;
-      }
+      font-weight: 600;
+      color: $surname-color;
+      font-family: 'Cinzel', sans-serif;
+      transition: transform 1.2s ease;
     }
   }
 }
@@ -98,38 +77,16 @@ nav {
 
 @media (max-width: 768px) {
   nav {
-    padding: 30px 10%;
+    padding: 30px 20px;
     flex-direction: column;
     align-items: start;
     justify-content: center;
 
     .logo {
       padding: 0;
-      width: 90%;
 
       .logo-name-surname {
-        font-size: 18px;
-
-        .logo-name {
-          font-weight: 400;
-          transition: transform 1.2s ease;
-        }
-
-        .logo-surname {
-          transition: transform 1.2s ease;
-        }
-      }
-
-      &:hover {
-        .logo-name {
-          transform: translateX(-15px);
-          transition: transform 0.3s ease;
-        }
-
-        .logo-surname {
-          transform: translateX(15px);
-          transition: transform 0.3s ease;
-        }
+        font-size: 1.25rem;
       }
     }
   }

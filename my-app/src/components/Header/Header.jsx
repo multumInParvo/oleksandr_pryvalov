@@ -32,8 +32,7 @@ function Header() {
         <nav>
             <div className='logo'>
                 <Link to="/" className='logo-name-surname'>
-                    <span className='logo-name'>Oleksandr</span>
-                    <span className='logo-surname'>Pryvalov</span>
+                    OLEKSANDR PRYVALOV
                 </Link>
             </div>
             <div className="menu">
