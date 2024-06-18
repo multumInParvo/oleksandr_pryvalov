@@ -1,30 +1,20 @@
 @import '../../styles/Colors.scss';
 
+.title-contact {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 100;
+    font-family: "Cinzel", sans-serif;
+    text-align: center;
+}
+
 .contact-container {
     min-height: 70vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0 10%;
-
-    .deco-line {
-        position: absolute;
-        top: 200px;
-        width: 0;
-        height: 1px;
-        background-color: black;
-        animation: expand-line 3s forwards;
-
-        @keyframes expand-line {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 180px;
-            }
-        }
-    }
 
     .info-image-container {
         display: flex;
@@ -81,6 +71,10 @@
 }
 
 @media (max-width: 1024px) {
+    .title-contact {
+        font-size: 1.4rem;
+    }
+
     .contact-container {
         flex-direction: column;
 
@@ -113,66 +107,3 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .contact {
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: column;
-//     position: relative;
-
-//     .contact-info {
-
-
-//         .contact-details-color {
-
-//         }
-
-//         .contact-details {
-
-//         }
-
-//         .instagram-logo {
-
-//         }
-//     }
-
-//     .contact-image-container {
-//         display: flex;
-//         justify-content: center;
-//         padding: 0 10%;
-
-//         .contact-image {
-//             max-height: 690px;
-//             width: 100%;
-//             object-fit: cover;
-//             transition: opacity 3000ms ease;
-//         }
-//     }
-// }

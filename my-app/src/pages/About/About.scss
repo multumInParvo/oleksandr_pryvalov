@@ -5,26 +5,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 10%;
-
-    .deco-line {
-        position: absolute;
-        top: 200px;
-        width: 0;
-        height: 1px;
-        background-color: black;
-        animation: expand-line 3s forwards;
-
-        @keyframes expand-line {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 180px;
-            }
-        }
-    }
+    padding: 0 20px;
 
     .text-pic-container {
         display: flex;
@@ -41,6 +22,13 @@
             to {
                 opacity: 1;
             }
+        }
+
+        .title-about {
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 100;
+            font-family: "Cinzel", sans-serif;
         }
 
         .about-text {
@@ -63,9 +51,6 @@
 
 @media (max-width: 1024px) {
     .about-container {
-        .deco-line {
-            display: none;
-        }
 
         .text-pic-container {
             .about-text {
@@ -83,9 +68,15 @@
 @media (max-width: 768px) {
     .about-container {
         .text-pic-container {
+            padding: 0;
+
+            .title-about {
+                font-size: 1.4rem;
+            }
+
             .about-text {
                 font-size: 16px;
-                width: 90%;
+                width: 100%;
             }
 
             .about-image {

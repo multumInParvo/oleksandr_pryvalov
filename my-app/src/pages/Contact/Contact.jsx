@@ -12,8 +12,8 @@ function Contact() {
             <Helmet>
                 <title>CONTACT | oleksandr pryvalov</title>
             </Helmet>
+            <h1 className='title-contact'>Contact</h1>
             <div className='contact-container'>
-                <div className='deco-line'></div>
                 <div className='info-image-container'>
                     <div className='contact-info'>
                         <span className='contact-details'>E-MAIL ME</span>

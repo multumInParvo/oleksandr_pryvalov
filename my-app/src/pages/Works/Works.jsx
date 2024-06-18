@@ -21,6 +21,7 @@ function Works() {
       <Helmet>
         <title>WORKS | Oleksandr Pryvalov</title>
       </Helmet>
+      <h1 className='title-works'>Works</h1>
       <div className="gallery-container">
         <ResponsiveMasonry
           columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 3 }}

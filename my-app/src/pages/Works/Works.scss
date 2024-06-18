@@ -1,3 +1,11 @@
+.title-works {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 100;
+    font-family: "Cinzel", sans-serif;
+    text-align: center;
+}
+
 .gallery-container {
     min-height: 70vh;
     width: 80%;
@@ -21,6 +29,10 @@
 }
 
 @media (max-width: 768px) {
+    .title-works {
+        font-size: 1.4rem;
+    }
+
     .gallery-container {
         width: 96%;
         padding: 0 2%;
