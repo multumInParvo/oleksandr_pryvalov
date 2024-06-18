@@ -56,6 +56,12 @@ nav {
 
 .menu-icon {
   display: none;
+  -webkit-tap-highlight-color: transparent; 
+  outline: none; 
+}
+
+.menu-icon:focus {
+  outline: none;
 }
 
 .slide-menu {
@@ -154,6 +160,12 @@ nav {
       background: none;
       border: none;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent; 
+      outline: none; 
+    }
+
+    .close-button-menu:focus {
+      outline: none;
     }
   }
 
@@ -180,7 +192,7 @@ nav {
 
 .overlay.show {
   background-color: rgba(0, 0, 0, 0.5);
-  opacity: 2;
+  opacity: 1;
   visibility: visible;
   transition: background-color 0.3s ease-in-out, visibility 0s 0s;
 }
