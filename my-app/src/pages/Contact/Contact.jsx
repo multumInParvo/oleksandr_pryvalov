@@ -4,6 +4,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Form from '../../components/Form/Form';
 import '../Contact/Contact.scss';
 
 function Contact() {
@@ -14,14 +15,15 @@ function Contact() {
             </Helmet>
             <h1 className='title-contact'>Contact</h1>
             <div className='contact-container'>
-                <div className='info-image-container'>
+                <div className='info-container'>
                     <div className='contact-info'>
-                        <span className='contact-details'>E-MAIL ME</span>
-                        <span className='contact-details-color'>OLEKSANDRPRYV@GMAIL.COM</span>
-                        <span className='contact-details'>FOLLOW ME</span>
+                        <span className='contact-detail-title'>E-MAIL ME</span>
+                        <span className='contact-detail'>oleksandrpryv@gmail.com</span>
+                        <span className='contact-detail-title'>FOLLOW ME</span>
                         <Link to="https://www.instagram.com/oleksandrpryv/" className='instagram-logo'><FontAwesomeIcon icon={faInstagram} /></Link>
+                        <span className='contact-detail-title'>ASK ME ANYTHING</span>
                     </div>
-                    <img src="/images/brushes.webp" alt="artist brushes" className='contact-image' />
+                    <Form />
                 </div>
             </div>
         </HelmetProvider>

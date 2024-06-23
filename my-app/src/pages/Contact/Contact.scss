@@ -3,23 +3,22 @@
 .title-contact {
     font-size: 2rem;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     font-weight: 100;
     font-family: "Cinzel", sans-serif;
     text-align: center;
 }
 
 .contact-container {
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: center;
     padding: 0 5%;
 
-    .info-image-container {
+    .info-container {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         opacity: 0;
         animation: fadeIn 2s forwards;
 
@@ -34,49 +33,47 @@
         }
 
         .contact-info {
+            align-items: start;
             display: flex;
             flex-direction: column;
-            gap: 40px;
             font-weight: 400;
             line-height: 2;
             font-size: 18px;
             margin: 0;
-            width: 50%;
 
-            .contact-details {
-                letter-spacing: 5px;
+            .contact-detail-title {
+                padding-bottom: 10px;
                 font-size: 12px;
                 font-weight: 500;
+                letter-spacing: 5px;
+                color: $main-text-color;
             }
 
-            .contact-details-color {
+            .contact-detail {
+                letter-spacing: 1px;
+                padding-bottom: 40px;
                 font-size: 12px;
-                letter-spacing: 5px;
                 font-weight: 500;
+                color: $contact-color;
             }
 
             .instagram-logo {
-                font-size: 20px;
-                color: $surname-color;
+                padding-bottom: 70px;
+                line-height: 0;
+                font-size: 18px;
+                color: $logo-color;
             }
-        }
-
-        .contact-image {
-            padding-top: 50px;
-            width: 50%;
-            opacity: 0.7;
         }
     }
 }
-
-
 
 @media (max-width: 768px) {
     .title-contact {
         font-size: 1.4rem;
     }
+
     .contact-container {
-        .info-image-container {
+        .info-container {
             .contact-info {
                 width: 100%;
 
@@ -87,10 +84,6 @@
                 .contact-details-color {
                     letter-spacing: 4px;
                 }
-            }
-
-            .contact-image {
-                width: 100%;
             }
         }
     }
