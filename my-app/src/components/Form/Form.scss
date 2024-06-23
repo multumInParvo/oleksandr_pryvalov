@@ -1,0 +1,168 @@
+@import '../../styles/Colors.scss';
+
+.form-container {
+    form {
+        .first-last-name-container {
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            .first-name-container {
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+
+                .first-name-label {
+                    color: $contact-color;
+                    font-size: 12px;
+                }
+
+                .first-name-input {
+                    padding: 10px;
+                    border: none;
+                    border-bottom: 1px solid rgb(0, 0, 0);
+                    outline: none;
+                }
+            }
+
+            .last-name-container {
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+
+                .last-name-label {
+                    color: $contact-color;
+                    font-size: 12px;
+                }
+
+                .last-name-input {
+                    padding: 10px;
+                    border: none;
+                    border-bottom: 1px solid rgb(0, 0, 0);
+                    outline: none;
+                }
+            }
+        }
+
+        .email-subject-container {
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            .email-container {
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+
+                .email-label {
+                    color: $contact-color;
+                    font-size: 12px;
+                }
+
+                .email-input {
+                    padding: 10px;
+                    border: none;
+                    border-bottom: 1px solid rgb(0, 0, 0);
+                    outline: none;
+                }
+            }
+
+            .subject-container {
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+
+                .subject-label {
+                    color: $contact-color;
+                    font-size: 12px;
+                }
+
+                .subject-input {
+                    padding: 10px;
+                    border: none;
+                    border-bottom: 1px solid rgb(0, 0, 0);
+                    outline: none;
+                }
+            }
+        }
+
+        .message-container {
+            width: 100%;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+
+            .message-label {
+                color: $contact-color;
+                font-size: 12px;
+            }
+
+            .message-textarea {
+                height: 90px;
+                width: 94%;
+                resize: none;
+                padding: 10px;
+                border: none;
+                border-bottom: 1px solid rgb(0, 0, 0);
+                outline: none;
+            }
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: end;
+
+            button {
+                padding: 0;
+                font-size: 24px;
+                font-weight: 500;
+                background: none;
+                font-family: 'Cinzel', sans-serif;
+                color: $logo-color;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        form {
+            .first-last-name-container {
+                display: flex;
+                flex-direction: column;
+
+                .first-name-input {
+                    text-align: center;
+                }
+
+                .last-name-input {
+                    text-align: center;
+                }
+            }
+
+            .email-subject-container {
+                display: flex;
+                flex-direction: column;
+
+                .email-input {
+                    text-align: center;
+                }
+
+                .subject-input {
+                    text-align: center;
+                }
+            }
+
+            .button-container {
+                button {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
