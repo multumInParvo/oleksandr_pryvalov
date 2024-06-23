@@ -1,4 +1,3 @@
-// Header //
 import React, { useState, useRef, useEffect } from 'react';
 import '../Header/Header.scss';
 import { Link } from 'react-router-dom';
@@ -40,7 +39,7 @@ function Header() {
                 <Link to="/works" className='menu-links'>WORKS</Link>
                 <Link to="/contact" className='menu-links'>CONTACT</Link>
             </div>
-            <div className="menu-icon" onClick={toggleMenu}>
+            <div className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
                 <div className="bar"></div>
                 <div className="bar"></div>
                 <div className="bar"></div>
@@ -49,11 +48,8 @@ function Header() {
                 <Link to="/about" className='menu-links' onClick={toggleMenu}>ABOUT</Link>
                 <Link to="/works" className='menu-links' onClick={toggleMenu}>WORKS</Link>
                 <Link to="/contact" className='menu-links' onClick={toggleMenu}>CONTACT</Link>
-                <button className='close-button-menu' onClick={toggleMenu}>
-                    ×
-                </button>
             </div>
-            <div className={`overlay ${menuOpen ? 'show' : ''}`} onClick={toggleMenu} ref={overlayRef}></div>
+            <div className={`overlay ${menuOpen ? 'show' : ''}`} onClick={toggleMenu} ></div>
         </nav>
     );
 }

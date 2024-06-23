@@ -17,8 +17,8 @@ nav {
       text-decoration: none;
       display: flex;
       flex-direction: row;
-      font-weight: 600;
-      color: $surname-color;
+      font-weight: 500;
+      color: $logo-color;
       font-family: 'Cinzel', sans-serif;
       transition: transform 1.2s ease;
     }
@@ -34,7 +34,7 @@ nav {
 
   .menu-links {
     letter-spacing: 5px;
-    color: $name-color;
+    color: $main-text-color;
     text-decoration: none;
     transition: color 0.2s;
 
@@ -44,7 +44,7 @@ nav {
   }
 
   .instagram-logo {
-    color: $name-color;
+    color: $main-text-color;
     font-size: 20px;
     transition: color 0.2s;
 
@@ -56,7 +56,7 @@ nav {
 
 .menu-icon {
   display: none;
-  -webkit-tap-highlight-color: transparent; 
+  -webkit-tap-highlight-color: transparent;
   outline: none; 
 }
 
@@ -103,17 +103,49 @@ nav {
 
   .menu-icon {
     display: block;
-    position: absolute;
-    top: 26px;
+    top: 34px;
     right: 20px;
+    -webkit-tap-highlight-color: transparent; 
+    outline: none; 
     cursor: pointer;
-
+    position: absolute;
+    width: 30px;
+    height: 18px;
+    transition: transform 0.4s;
+    z-index: 3;
+  
     .bar {
-      width: 24px;
+      width: 100%;
       height: 2px;
       background-color: #808080;
-      margin: 6px 0;
-      transition: 0.4s;
+      position: absolute;
+      transition: all 0.4s;
+    }
+  
+    .bar:nth-child(1) {
+      top: 0;
+    }
+  
+    .bar:nth-child(2) {
+      top: 8px;
+    }
+  
+    .bar:nth-child(3) {
+      top: 16px;
+    }
+  
+    &.open .bar:nth-child(1) {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+  
+    &.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    &.open .bar:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 8px;
     }
   }
 
