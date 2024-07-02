@@ -13,7 +13,6 @@
     min-height: 60vh;
     display: flex;
     justify-content: center;
-    padding: 0 5%;
 
     .info-container {
         display: flex;
@@ -50,18 +49,16 @@
             }
 
             .contact-detail {
-                letter-spacing: 1px;
                 padding-bottom: 40px;
                 font-size: 12px;
-                font-weight: 500;
                 color: $contact-color;
             }
 
             .instagram-logo {
-                padding-bottom: 70px;
+                padding-bottom: 40px;
                 line-height: 0;
-                font-size: 18px;
-                color: $logo-color;
+                font-size: 14px;
+                color: $main-text-color;
             }
         }
     }

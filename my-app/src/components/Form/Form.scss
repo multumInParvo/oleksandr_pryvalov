@@ -1,6 +1,7 @@
 @import '../../styles/Colors.scss';
 
 .form-container {
+    padding-top: 30px;
     form {
         .first-last-name-container {
             padding-bottom: 15px;
@@ -131,6 +132,8 @@
 
 @media (max-width: 768px) {
     .form-container {
+        width: 300px;
+
         form {
             .first-last-name-container {
                 display: flex;
