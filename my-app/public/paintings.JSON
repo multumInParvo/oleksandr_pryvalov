@@ -8,36 +8,12 @@
         "description": " painting of old houses with red doors"
     },
     {
-        "picture": "/images/azaylerideau_detail.webp",
-        "title": "Azay-le-Rideau detail",
-        "medium": "oil on canvas",
-        "dimensions": "60x80",
-        "year": "2024",
-        "description": "red doors"
-    },
-    {
-        "picture": "/images/flowers.webp",
-        "title": "Red flowers",
-        "medium": "oil on canvas",
-        "dimensions": "60x80",
-        "year": "2024",
-        "description": "painting of flowers"
-    },
-    {
         "picture": "/images/6pm.webp",
         "title": "At 6PM",
         "medium": "oil on canvas",
         "dimensions": "60x80",
         "year": "2024",
         "description": "red porcelain chicken staring at a scared blue owl"
-    },
-    {
-        "picture": "/images/vase.webp",
-        "title": "Vase detail",
-        "medium": "oil on canvas",
-        "dimensions": "30x40",
-        "year": "2022",
-        "description": "a vase"
     },
     {
         "picture": "/images/campestre.webp",
