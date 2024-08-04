@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import paintingsData from '../../data/paintings.json';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link, useLocation } from 'react-router-dom';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
@@ -7,15 +8,8 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Works.scss';
 
 function Works() {
-  const [paintings, setPaintings] = useState([]);
+  const [paintings, setPaintings] = useState(paintingsData);
   const location = useLocation();
-
-  useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/paintings.json`)
-      .then((response) => response.json())
-      .then((data) => setPaintings(data))
-      .catch((error) => console.error('Error fetching paintings:', error));
-  }, []);
 
   return (
     <HelmetProvider>
