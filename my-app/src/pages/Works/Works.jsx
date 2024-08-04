@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import paintingsData from '../../data/paintings.json';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link, useLocation } from 'react-router-dom';
@@ -8,7 +8,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Works.scss';
 
 function Works() {
-  const [paintings, setPaintings] = useState(paintingsData);
+  const [paintings] = useState(paintingsData);
   const location = useLocation();
 
   return (

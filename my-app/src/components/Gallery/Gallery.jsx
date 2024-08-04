@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import paintingsData from '../../data/paintings.json';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,23 +14,8 @@ const Gallery = () => {
   const location = useLocation();
   const initialIndex = parseInt(index, 10);
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [paintings, setPaintings] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(`${process.env.PUBLIC_URL}/paintings.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        setPaintings(data);
-        setCurrentIndex(initialIndex);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching paintings:', error);
-        setIsLoading(false);
-      });
-  }, [initialIndex]);
+  const [paintings] = useState(paintingsData); 
+  const [isLoading, setIsLoading] = useState(false); 
 
   const closeModal = () => {
     const from = location.state?.from || '/';
@@ -43,7 +29,7 @@ const Gallery = () => {
   return (
     <div className={`gallery-container ${isLoading ? 'loading' : ''}`}>
       {paintings.length > 0 && (
-        <div className="lightbox-overlay">
+        <div className="lightbox-overlay" onClick={closeModal}>
           <div className="close-return-button-container">
             <button className="return-button" onClick={closeModal}></button>
             <button className='close-button' onClick={closeModal}>×</button>

@@ -1,19 +1,13 @@
 // Carousel //
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import paintingsData from '../../data/paintings.json';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../Carousel/Carousel.scss';
 
 const Carousel = () => {
-  const [paintings, setPaintings] = useState([]);
-
-  useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/paintings.json`)
-      .then((response) => response.json())
-      .then((data) => setPaintings(data))
-      .catch((error) => console.error('Error fetching paintings:', error));
-  }, []);
+  const [paintings] = useState(paintingsData);
 
   const settings = {
     arrows: false,
