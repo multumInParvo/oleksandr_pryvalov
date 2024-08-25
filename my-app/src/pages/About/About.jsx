@@ -26,9 +26,6 @@ function About() {
                         While exploring various interests in his youth, art, particularly drawing and painting, remained a constant.
                         As a self-taught artist, Pryvalov's fascination with capturing the world visually became a defining force in his life.
                         Finally, in France, he met the conditions to take oil painting to a serious level.
-                        Pryvalov finds inspiration in the facades of aging buildings. He sees these weathered, crumbling structures, and worn doors not just as decay, but as silent witnesses to time.
-                        Each mark left by the elements holds a potential story to uncover. Through his paintings, Pryvalov aims to capture the mark of time.
-                        His works portray weathered exteriors, objects and characters that aim to transport the viewer to other times.
                     </p>
                     <img className='about-image' src="/images/artist.webp" alt="Alt image" />
                 </div>
